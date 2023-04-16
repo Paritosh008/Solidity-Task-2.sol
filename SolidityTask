@@ -1,0 +1,55 @@
+//Below is a piece of code in solidity
+//Task- provide detailed gas cost report for the following code by using storage ,
+//memory and calldata for the different structs and variables used. Use separate
+//functions to get title, author, bookId and price for this task
+//SPDX-License-Identifier:MIT
+//pragma solidity 0.8.6;
+//contract structure{
+//struct Book{
+//string title;
+//string author;
+//uint bookID;
+//uint price;
+//}
+// define a struct- name of the struct variable to represent the struct
+//Book book;
+//function setBook() public {
+//book= Book("Blokchain for beginners","Ineuron",4,1000);
+//}
+//function getBookId() public view returns(uint){
+//return book.bookID;
+//}
+//}
+//Solution
+
+//SPDX-License-Identifier:GPL-3.0
+pragma solidity 0.8.6;
+
+contract structure{
+    struct Book{
+        string title;
+        string author;
+        uint bookID;
+        uint price;
+    }
+    //define a struct-name of the struct variable to represent the struct
+    Book book;
+    function setBook() public{
+        book = Book("Blockchain for beginners","Ineuron",4,1000);
+    }
+    function getBookId() public view returns(uint){
+        return book.bookID;
+    }
+
+    function getTitle() public view returns(string memory){
+        
+        return book.title;
+    }
+  function getAuthor() public view returns(string memory){
+    return book.author;
+}
+  function getPrice() public view returns(uint){
+      return book.price;
+  }
+
+}
